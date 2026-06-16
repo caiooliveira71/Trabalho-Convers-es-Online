@@ -1,0 +1,130 @@
+/* Variáveis para fácil manutenção de cores e estilos */
+:root {
+--primary-color: #2563eb;
+--primary-hover: #1d4ed8;
+--bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+        --radius: 12px;
+        --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        /* Reset básico e tipografia */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-image: url(assets/wallpaper-967837_1280.webp);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container Principal (Card) */
+        .converter-card {
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 450px;
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        /* Grupos de Input */
+        .input-group {
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 0.75rem 3rem 0.75rem 1rem;
+            font-size: 1.125rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        /* Efeito de foco acessível */
+        input[type="number"]:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        /* Sufixo dentro do input (cm / m) */
+        .unit-suffix {
+            position: absolute;
+            right: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            pointer-events: none;
+        }
+
+        /* Componente Visual de Interconexão (Apenas decorativo/UX) */
+        .divider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem 0;
+            color: var(--text-secondary);
+        }
+
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .divider span {
+            padding: 0 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        /* Input de resultado (estilizado como leitura, mas mantendo consistência) */
+        input[readonly] {
+            background-color: #f1f5f9;
+            cursor: not-allowed;
+        }
+
+        /* Remove as setinhas padrão de input number para um visual mais limpo */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }

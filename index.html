@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Centímetros para Metros</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main class="converter-card">
+        <h1>Conversor de Medidas</h1>
+        
+        <div class="input-group">
+            <label for="cmInput">Centímetros (cm)</label>
+            <div class="input-wrapper">
+                <input 
+                    type="number" 
+                    id="cmInput" 
+                    placeholder="Digite o valor..." 
+                    min="0" 
+                    step="any"
+                    aria-describedby="cm-helper"
+                >
+                <span class="unit-suffix">cm</span>
+            </div>
+        </div>
+
+        <div class="divider">
+            <span>equivale a</span>
+        </div>
+
+        <div class="input-group">
+            <label for="mInput">Metros (m)</label>
+            <div class="input-wrapper">
+                <input 
+                    type="number" 
+                    id="mInput" 
+                    readonly 
+                    placeholder="0"
+                    tabindex="-1"
+                >
+                <span class="unit-suffix">m</span>
+            </div>
+            <button>
+                <a href="pagina2.html">proxima pagina</a>
+            </button>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cmInput = document.getElementById('cmInput');
+            const mInput = document.getElementById('mInput');
+
+            // Evento 'input' captura mudanças em tempo real (digitação, colar, setas)
+            cmInput.addEventListener('input', () => {
+                const cmValue = parseFloat(cmInput.value);
+
+                // Validação simples: se não for um número válido, limpa o resultado
+                if (isNaN(cmValue)) {
+                    mInput.value = '';
+                    return;
+                }
+
+                // Regra de negócio: 1 metro = 100 centímetros
+                const mValue = cmValue / 100;
+
+                // Evita problemas de arredondamento de ponto flutuante do JS (ex: 0.1 + 0.2)
+                // Limitamos a até 6 casas decimais, mas removemos zeros herdados desnecessários
+                mInput.value = Number(mValue.toFixed(6));
+            });
+        });
+    </script>
+</body>
+</html>
