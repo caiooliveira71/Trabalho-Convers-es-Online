@@ -1,11 +1,17 @@
 body {
     font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     background-color: #f0f2f5;
     margin: 0;
+    height: 100vh;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
 }
 
 .container {
@@ -40,6 +46,12 @@ button {
 }
 
 .btn-secundario { background-color: #3498db; }
+
+.btn-proxima {
+    width: 350px;
+    background-color: #2ecc71;
+    font-weight: bold;
+}
 
 .result {
     margin-top: 20px;

@@ -7,23 +7,28 @@
 </head>
 <body>
 
-<div class="container">
-    <h2>Conversor de Moedas</h2>
-    
-    <div class="input-group">
-        <label>Valor:</label>
-        <input type="number" id="valor" placeholder="Digite o valor">
+<div class="main-wrapper">
+    <div class="container">
+        <h2>Conversor de Moedas</h2>
+        
+        <div class="input-group">
+            <label>Valor:</label>
+            <input type="number" id="valor" placeholder="Digite o valor">
+        </div>
+
+        <div class="input-group">
+            <label>Taxa de Câmbio (1 USD = ? BRL):</label>
+            <input type="number" id="taxa" value="5.20" step="0.01">
+        </div>
+
+        <button onclick="converter('dolarParaReal')">Converter USD para BRL</button>
+        <button onclick="converter('realParaDolar')" class="btn-secundario">Converter BRL para USD</button>
+
+        <div class="result" id="resultado">Resultado aparecerá aqui</div>
     </div>
 
-    <div class="input-group">
-        <label>Taxa de Câmbio (1 USD = ? BRL):</label>
-        <input type="number" id="taxa" value="5.20" step="0.01">
-    </div>
-
-    <button onclick="converter('dolarParaReal')">Converter USD para BRL</button>
-    <button onclick="converter('realParaDolar')" class="btn-secundario">Converter BRL para USD</button>
-
-    <div class="result" id="resultado">Resultado aparecerá aqui</div>
+    <button onclick="window.location.href='pagina-4.html'">
+        Proxima Pagina de Conversão
 </div>
 
 <script src="script3.js"></script>
